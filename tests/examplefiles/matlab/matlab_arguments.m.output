@@ -155,7 +155,7 @@
 'arguments'   Keyword
 ' '           Text.Whitespace
 '('           Punctuation
-'Output'      Keyword
+'Output'      Name
 ')'           Punctuation
 '\n        '  Text.Whitespace
 'result'      Name
@@ -166,7 +166,7 @@
 '1'           Literal.Number.Integer
 ')'           Punctuation
 ' '           Text.Whitespace
-'double'      Name
+'double'      Name.Builtin
 '\n    '      Text.Whitespace
 'end'         Keyword
 '\n    '      Text.Whitespace

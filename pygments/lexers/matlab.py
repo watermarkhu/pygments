@@ -73,7 +73,7 @@ class MatlabLexer(RegexLexer):
              ('defprops', 'propattrs')),
             (r'(\s*^\s*)(properties)\b',
              bygroups(Whitespace, Keyword), 'defprops'),
-            (r'(?<!\.)(\s*)(arguments)(\s+)(\()',
+            (r'(?<!\.)([ \t]*)(arguments)(\s+)(\()',
              bygroups(Whitespace, Keyword, Whitespace, Punctuation),
              ('defargs', 'argattrs')),
             (r'(?<!\.)([ \t]*)(arguments)\b',
@@ -2710,7 +2710,7 @@ class MatlabLexer(RegexLexer):
             (r'(Repeating|Input|Output)\b', Keyword),
             (r'\)', Punctuation, '#pop'),
             (r'\s+', Whitespace),
-            (r'.', Text),
+            (r'.', Text),  # consume unexpected characters (e.g. malformed syntax)
         ],
         'defargs': [
             (r'%\{\s*\n', Comment.Multiline, 'blockcomment'),
